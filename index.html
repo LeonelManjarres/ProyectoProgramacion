@@ -56,11 +56,11 @@
                     <a class="nav-link" href="contacto.html">Contactanos</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="tienda.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
+                    <a class="nav-link dropdown-toggle" href="compras.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="tienda.html">Dama</a></li>
-                        <li><a class="dropdown-item" href="tienda.html">Caballeros</a></li>
-                        <li><a class="dropdown-item" href="tienda.html">Niños</a></li>
+                        <li><a class="dropdown-item" href="compras.html">Dama</a></li>
+                        <li><a class="dropdown-item" href="compras.html">Caballeros</a></li>
+                        <li><a class="dropdown-item" href="compras.html">Niños</a></li>
                     </ul>
                 </li>
             </ul>
@@ -69,6 +69,27 @@
                 <button class="btn btn-outline-success" type="submit"> Buscar </button>
             </form>
         </div>
+    </div>
+    <div class="navbar align-selt-center d-flex">
+        <div class="d-lg-none flez-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+            <div class="input-gruop">
+                <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search...">
+                <div class="input-gruop-text">
+                    <i class="fa fa-fw fa-search"></i>
+                </div>
+            </div>
+        </div>
+        <a class="nav-icon d-none d-jg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+            <i class="fa fa-fw fa-search text-dark mr-2"></i>
+        </a>
+        <a class="nav-icon position-relative text-decoration-none" href="#">
+            <i class="fa fa-fw  fa-cart-arrow-down text-dark mr-1"></i>
+            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+        </a>
+        <a class="nav-icon position-relative text-decoration-none" href="#">
+            <i class="fa fa-fw  fa-user text-dark mr-3"></i>
+            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+7</span>
+        </a>
     </div>
     </nav>
     <!-- Fin menú de navegación, cuerpo de la páginas-->
@@ -158,18 +179,18 @@
 
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="assets/img/Damas/blusa1.jpg" alt="Blusa" class="rounded-circle img-fluid borde"></a>
+                <a href="compras.html"><img src="assets/img/Damas/blusa1.jpg" alt="Blusa" class="rounded-circle img-fluid borde"></a>
                 <h5 class="text-center mt-3 mb-3">Blusas...</h5>
-                <p class="text-center"> <a class="btn btn-success " href="dama.html" >Ir a Tienda</a> </p>
+                <p class="text-center"> <a class="btn btn-success " href="compras.html" >Ir a Tienda</a> </p>
             </div>
         
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="assets/img/Caballero/pantalon1.jpg" alt="Pantalones" class="rounded-circle img-fluid borde"></a>
+                <a href="compras.html"><img src="assets/img/Caballero/pantalon1.jpg" alt="Pantalones" class="rounded-circle img-fluid borde"></a>
                 <h5 class="text-center mt-3 mb-3">Pantalones...</h5>
                 <p class="text-center"> <a class="btn btn-success " href="#" >Ir a Tienda</a> </p>
             </div>       
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="assets/img/Caballero/bermuda1.jpg" alt="Bermudas" class="rounded-circle img-fluid borde"></a>
+                <a href="compras.html"><img src="assets/img/Caballero/bermuda1.jpg" alt="Bermudas" class="rounded-circle img-fluid borde"></a>
                 <h5 class="text-center mt-3 mb-3">Bermudas...</h5>
                 <p class="text-center"> <a class="btn btn-success " href="#" >Ir a Tienda</a> </p>
             </div>
@@ -197,12 +218,12 @@
                 <div class="col-md-4 pt-5">
                         <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="tienda.html">camisas</a></li>
-                        <li><a class="text-decoration-none" href="tienda.html">Blusas</a></li>
-                        <li><a class="text-decoration-none" href="tienda.html">jeans</a></li>
-                        <li><a class="text-decoration-none" href="tienda.html">Bermudas</a></li>
-                        <li><a class="text-decoration-none" href="tienda.html">Playeras</a></li>
-                        <li><a class="text-decoration-none" href="tienda.html">Gafas</a></li>
+                        <li><a class="text-decoration-none" href="compras.html">camisas</a></li>
+                        <li><a class="text-decoration-none" href="compras.html">Blusas</a></li>
+                        <li><a class="text-decoration-none" href="compras.html">jeans</a></li>
+                        <li><a class="text-decoration-none" href="compras.html">Bermudas</a></li>
+                        <li><a class="text-decoration-none" href="compras.html">Playeras</a></li>
+                        <li><a class="text-decoration-none" href="compras.html">Gafas</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 pt-5">
@@ -237,7 +258,7 @@
             <div class="col-auto">
                 <label class="sr-only" for="subscribeEmail">Escriba su Email</label>
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                    <input type="email" class="form-control bg-light border-light" id="subscribeEmail" placeholder="Email address">
                     <div class="input-group-text btn-success text-light">Subscribirse</div>
                 </div>
             </div>
