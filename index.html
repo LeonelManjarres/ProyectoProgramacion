@@ -1,39 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Fashion</title>
-    <!-- css-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/templatemo.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban_Fashion</title>
+    <!-- iconos -->
+    <link rel="apple-touch-icon" href="assets/img/" />
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
 
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+
+    <!--Agregando lineas para que me reconosca Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
 </head>
 <body>
-    <!-- inicio encabezado-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
-        <div class="container text-light">
-            <div class="w-100 d-flex justify-content-between">
-                <div>
-                    <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@urbanfashion.com">info@urbanfashion.com</a>
-                    <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel: 057-304-217-19-28">057-304-217-19-28</a>
-                </div>
-                <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
-
-                </div>
-
+    <!--Inicio del encabezado-->
+    <nav
+    class="navbar navbar-expand-lg bg-dark navbar-light" id="templatemo_nav_top">
+    <div class="container text-light">
+        <div class="w-100 d-flex justify-content-between">
+            <div>
+                <i class="fa fa-envelope mx-2"></i>
+                <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@urbanfashion.com">info@urbanfashion.com</a>
+                <i class="fa fa-phone mx-2"></i>
+                <a class="navbar-sm-brand text-light text-decoration-none" href="tel: 057-304-217-19-28">057-304-217-19-28</a>
             </div>
-
+            <div>
+                <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+            </div>
         </div>
+    </div>
     </nav>
-    <!-- fin encabezado-->
+    <!--menú de navegación, cuerpo de la páginas-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        
+            <!--<a class="navbar-brand" href="#">Urban Fashion</a>-->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">A cerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contactanos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dama.html">Dama</a></li>
+                        <li><a class="dropdown-item" href="#">Caballeros</a></li>
+                        <li><a class="dropdown-item" href="#">Niños</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit"> Buscar </button>
+            </form>
+        </div>
+    </div>
+    </nav>
+    <!-- Fin menú de navegación, cuerpo de la páginas-->
     <!-- inicio secciones-->
 <!-- carrusel -->
 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -98,68 +137,95 @@
         </div>
     </div>
     <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
-        <i class="fas fa-chevron-left"></i></a>
+        <i class="fas fa-chevron-left"></i>
+    </a>
     <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
-        <i class="fas fa-chevron-right"></i></a>
+        <i class="fas fa-chevron-right"></i>
+    </a>
 </div>
 <!-- fin carrusel -->
     <!--fin de la barra de navegacion-->
-    <!-- fin secciones-->
 
-    <!-- inicio de pie-->
+    <!--Seccion-->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Promociones del mes...</h1>
+                <p>
+                    Estos son los articulos mas vendidos del mes de octubre....
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="assets/img/Damas/blusa1.jpg" alt="Blusa" class="rounded-circle img-fluid borde"></a>
+                <h5 class="text-center mt-3 mb-3">Blusas...</h5>
+                <p class="text-center"> <a class="btn btn-success " href="dama.html" >Ir a Tienda</a> </p>
+            </div>
+        
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="assets/img/Caballero/pantalon1.jpg" alt="Pantalones" class="rounded-circle img-fluid borde"></a>
+                <h5 class="text-center mt-3 mb-3">Pantalones...</h5>
+                <p class="text-center"> <a class="btn btn-success " href="#" >Ir a Tienda</a> </p>
+            </div>       
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="assets/img/Caballero/bermuda1.jpg" alt="Bermudas" class="rounded-circle img-fluid borde"></a>
+                <h5 class="text-center mt-3 mb-3">Bermudas...</h5>
+                <p class="text-center"> <a class="btn btn-success " href="#" >Ir a Tienda</a> </p>
+            </div>
+        </div>
+        
+    </section>
+    <!-- inicio de pie -->
     <footer class="bg-dark" id="templatemo_footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light log">UrbanFashion</h2>
+                        <h2 class="h2 text-success border-bottom pb-3 border-light log">Urban Fashion</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Local principal - Barranquilla - Colombia
+                        <li><i class="fas fa-map-marker-alt fa-fw"></i>
+                            Local Principal - Barranquilla - Colombia
                         </li>
-                        <li>
-                            <i class="fa fa-phone fa-fw"></i>
-                            <a class="navbar-sm-brand text-light text-decoration-none" href="tel: 057-304-217-19-28">057-304-217-19-28</a>
+                        <li><i class="fa fa-phone fa-fw"></i>
+                            <a class="navbar-sm-brand text-light text-decoration-none" href="tel 057-316-715-6710">057-316-715-6710</a>
                         </li>
-                        <li>
-                            <i class="fa fa-envelope mx-2"></i>
-                            <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@urbanfashion.com">info@urbanfashion.com</a>
+                        <li><i class="fa fa-envelope mx-2"></i>
+                            <a class="navbar-sm-brand text-light text-decoration-none" href="cliente.info@urbanfamily.com">info@urbanfashion.com</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Camisas</a></li>
-                        <li><a class="text-decoration-none" href="#">Jeans</a></li>
-                        <li><a class="text-decoration-none" href="#">pantalonetas</a></li>
-                        <li><a class="text-decoration-none" href="#">blusas niños</a></li>
-                        <li><a class="text-decoration-none" href="#">gorras</a></li>
-                        <li><a class="text-decoration-none" href="#">gafas</a></li>
+                        <li><a class="text-decoration-none" href="#">camisas</a></li>
+                        <li><a class="text-decoration-none" href="#">Blusas</a></li>
+                        <li><a class="text-decoration-none" href="#">jeans</a></li>
+                        <li><a class="text-decoration-none" href="#">Bermudas</a></li>
+                        <li><a class="text-decoration-none" href="#">Playeras</a></li>
+                        <li><a class="text-decoration-none" href="#">Gafas</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Mas información</h2>
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Mas informacion</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
+                        <li><a class="text-decoration-none" href="index.html">Home</a></li>
                         <li><a class="text-decoration-none" href="#">A cerca de</a></li>
                         <li><a class="text-decoration-none" href="#">Compras</a></li>
-                        <li><a class="text-decoration-none" href="#">Productos</a></li>
-                        <li><a class="text-decoration-none" href="#">Contacto</a></li>
+                        <li><a class="text-decoration-none" href="#">Contactos</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="w-100 bg-black py-3">
+        <div class="w100 bg-black py-3">
             <div class="container">
                 <div class="row pt-2">
-                    <p class="text-left text-light">
-                        Copyright &copy; 2024 - UrbanFashion | Diseñado por: Leonel Luz Sandra Jose
-                    </p>
+                    <p class="text-left text-light">Copyright &copy; 2024 - urbanfashion | Diseñado por: Leonel Manjarres</p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- fin de pie-->
+    <!-- FIN DE PIE -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
