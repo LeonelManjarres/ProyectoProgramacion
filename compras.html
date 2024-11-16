@@ -179,64 +179,81 @@
                         </div>
                     </div>
                 </div>
-<!--productos en el carro--> 
-                    <script>
-                        //DOM
-                        document.addEventListener('DOMContenloaded',() =>{
-                            //Variables - base de datos
-                            const baseDedatos=[
-                                {
-                                    id:1,
-                                    nombre:'Blusa Blanca',
-                                    precio:90000,
-                                    imagen: 'assets/img/Damas/blusa1.jpg'
-                                },
-                                {
-                                    id:2,
-                                    nombre:'Blusa Verde',
-                                    precio:110000,
-                                    imagen: 'assets/img/Damas/blusa2.jpg'
-                                },
-                                {
-                                    id:3,
-                                    nombre:'Buso Blanco&Azul',
-                                    precio:100000,
-                                    imagen: 'assets/img/Caballero/buso1.jpg'
-                                },
-                                {
-                                    id:4,
-                                    nombre:'Buso Vinotinto',
-                                    precio:130000,
-                                    imagen: 'assets/img/Caballero/buso2.jpg'
-                                },
-                                {
-                                    id:5,
-                                    nombre:'Gorra Negra',
-                                    precio:60000,
-                                    imagen: 'assets/img/Accesorios/gorra1.jpg'
-                                },
-                            ];
+                <script>
+                    //DOM
+                    document.addEventListener('DOMContenloaded',() =>{
+                        //Variables - base de datos
+                        const baseDedatos=[
+                            {
+                                id:1,
+                                nombre:'Blusa Blanca',
+                                precio:90000,
+                                imagen: 'assets/img/Damas/blusa1.jpg'
+                            },
+                            {
+                                id:2,
+                                nombre:'Blusa Verde',
+                                precio:110000,
+                                imagen: 'assets/img/Damas/blusa2.jpg'
+                            },
+                            {
+                                id:3,
+                                nombre:'Buso Blanco&Azul',
+                                precio:100000,
+                                imagen: 'assets/img/Caballero/buso1.jpg'
+                            },
+                            {
+                                id:4,
+                                nombre:'Buso Vinotinto',
+                                precio:130000,
+                                imagen: 'assets/img/Caballero/buso2.jpg'
+                            },
+                            {
+                                id:5,
+                                nombre:'Gorra Negra',
+                                precio:60000,
+                                imagen: 'assets/img/Accesorios/gorra1.jpg'
+                            },
+                        ];
+                        let carrito = [];
+                        const divisa = '$';
+                        const DOMitems = document.querySelector('#items');
+                        const DOMcarrito = document.querySelector('#carrito');
+                        const DOMtotal = document.querySelector('#total');
+                        const DOMbotonVaciar= document.querySelector('#boton-vaciar');
 
-                        });
 
-                    </script>
-            <!--carrito-->
-                            <div class="container">
-                                <div class="row" >
-                                    <aside class="col-sm-4">
-                                        <h3>Carrito</h3>
-                                        <!--elementos del carrito-->
-                                        <ul id="carrito" class="list-group">
-                                            <hr>
-                                            <!--precio total-->
-                                            <p class="text-right">Total: $ <span id="total"></span></p>
-                                            <button id="boton-vaciar" class="btn-danger">Vaciar</button>
-                                            <button id="" class="btn btn-info">Pagar</button>
-                                        </ul>                                    
-                                    </aside>                  
-                                </div>  
-                            </div>
-            </div>
+                    //seccion de funciones
+                    /*
+                    Dibujamos todos los productos a partir de la base de datos
+                    */
+                    
+
+    
+                    });
+    
+                </script>
+        <!--carrito-->
+                        <div class="container">
+                            <div class="row" >
+                                <!--Elementos generados a partir del JSON-->
+                                <main id="items" class="col-sm-8 row"></main>
+                                <!--carrito-->
+                                <aside class="col-sm-4">                                    
+                                    <h3>Carrito</h3>
+                                    <!--elementos del carrito-->
+                                    <ul id="carrito" class="list-group">
+                                        <hr>
+                                        <!--precio total-->
+                                        <p class="text-right">Total: $ <span id="total"></span></p>
+                                        <button id="boton-vaciar" class="btn-danger">Vaciar</button>
+                                        <button id="" class="btn btn-info">Pagar</button>
+                                    </ul>                                    
+                                </aside>                  
+                            </div>  
+                        </div>
+<!--productos en el carro-->                   
+            </div>           
         </div>
     </div>
     <!--fin de contenido-->
