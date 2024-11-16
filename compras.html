@@ -221,17 +221,96 @@
                         const DOMcarrito = document.querySelector('#carrito');
                         const DOMtotal = document.querySelector('#total');
                         const DOMbotonVaciar= document.querySelector('#boton-vaciar');
-
+                    
 
                     //seccion de funciones
                     /*
-                    Dibujamos todos los productos a partir de la base de datos
+                    Dibujamos todos los productos a partir de la bd
                     */
-                    
+                    function renderizarProductos(){
+                        baseDedatos.forEach((info) => {
+                            //estructura                            
+                            const miNodo = document.createElement('div');
+                            miNodo.classList.add('card', 'col-sm-4');
+                            //boby
+                            const miNodoCardBody = document.createElement('div');
+                            miNodoCardBody.classList.add('card-body');
+                            //titulo
+                            const miNodoTitle = document.createElement('h6');
+                            miNodoTitle.classList.add('card-title');
+                            miNodoTitle.textContent = info.nombre;
+                            //imagen
+                            const miNodoImagen = document.createElement('img');
+                            miNodoImagen.classList.add('img-fluid');
+                            miNodoImagen.setAttribute('src', info.imagen);
+                            //precio
+                            const miNodoPrecio = document.createElement('p');
+                            miNodoPrecio.classList.add('card-text');
+                            miNodoPRecio.textContent =  `${divisa}${info.precio}`;
 
-    
-                    });
-    
+                            //boton
+                            const miNodoBoton = document.createElement('button');
+                            miNodoBoton.classList.add('btn', 'btn-primary');
+                            miNodoBoton.textContent = 'Agregar';
+                            miNodoBoton.setAttribute('marcador', info.id);
+                            miNodoBoton.addEventListener('click', anadirProductoAlCarrito);
+                            
+                            //insertamos
+                            miNodoCardBody.appendChild(miNodoImagen);
+                            miNodoCardBody.appendChild(miNodoTitle);
+                            miNodoCardBody.appendChild(miNodoPrecio);
+                            miNodoCardBody.appendChild(miNodoBoton);
+                            miNodo.appendChild(miNodoCardBody);
+                            DOMitems.appendChild(miNodo);                          
+                            
+                        });
+                    }
+                    /*
+                    Evento para añadir un producto al carro de compras
+                    */
+                    function anadirProductoAlCarrito(evento){
+                        //añadimos el nodo a nuestro carrito
+                        carrito.push(evento.target.getAttibute('marcador'))
+                        //actualiizamos el carrito
+                        renderizarCarrito();
+                        handleCarritoValue(carrito.length)
+                    }
+                    function handleCarritoValue(Value) {
+                        const carritoContainer = document.getElementById("carrito-value");
+                    }
+
+                    //dibujar todos los productos guardados en el carrito
+                    function renderizarCarrito(){
+                        //vaciamos todo el html
+                        DOMcarrito.textContent = "";
+                        //quitar duplicados
+                        const carritoDuplicados = [...new set(carrito)];
+                        //generamos los nodos apartir del carrito
+                        carritoDuplicados.forEach((item) => {
+                            //obtenemos el item que necesitamos de la variable base de datos
+                            const miItem = baseDedatos.filter((itemBaseDatos) =>{
+                                return itemBaseDatos.id === parseInt(item);
+                            });
+                        // cuenta el numero de veces que se repite el prodcucto
+                        const numeroUnidadesItem = carrito.reduce((total, itemId) =>{
+                            return itemId === item ? total += 1 : total;
+                        },0);
+                        //creamos el nodo del item del carrito
+                        const miBoton = document.createElement('button');
+                        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                        miBoton.textContent='X';
+                        miBoton.style.marginLeft = '1rem';
+                        miBoton.dataset.item = item;
+                        miboton.addEventListener('click', borraritemCarrito);
+                        //mezclamos nodos
+                        miNodo.appendChild(miboton);
+                        DOMcarrito.appendChild(miNodo);    
+                        });
+                    }
+                    renderizarProductos();
+                    renderizarCarrito();
+                    
+                });
                 </script>
         <!--carrito-->
                         <div class="container">
