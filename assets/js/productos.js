@@ -8,5 +8,7 @@ export const baseDedatos = [
     { id: 6, nombre: 'Buso Vinotinto', precio: 130000, imagen: 'assets/img/Caballero/Buso2.jpg' },
     { id: 7, nombre: 'Gorra Negra', precio: 60000, imagen: 'assets/img/Accesorios/gorra1.jpg' },    
     { id: 8, nombre: 'Gorra Azul', precio: 50000, imagen: 'assets/img/Accesorios/gorra2.jpg'},
+    { id: 9, nombre: 'Pulsera para hombre', precio: 40000, imagen:'assets/img/Accesorios/pulsera2.jpg'},
+    { id: 10, nombre: 'Pulsera 3 Corazones para Dama', precio: 35000, imagen:'assets/img/Accesorios/pulsera1.jpg'}
     
 ];
