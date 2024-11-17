@@ -13,8 +13,6 @@
 
     <link rel="stylesheet" href="assets/css/fontawesome.min.css"/>
 
-    <!--Agregando lineas para que me reconosca Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
 </head>
 <body>
     <!--Inicio del encabezado-->
@@ -86,7 +84,7 @@
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+9</span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark" id="contador-visitas">0</span>
                     </a>
                 </div>
             </div>
@@ -114,15 +112,15 @@
     </div>
     <!-- Fin menú de navegación, cuerpo de la páginas-->
 
-    <!--Inicioo de contenido-->
     <div class="container py-5">
         <div class="row">
-
+    
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">Categorias</h1>
                 <ul class="list-unstyled templatemo-accordion">
                     <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">Genero
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Genero
                             <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
                         <ul class="collapse show list-unstyled pl-3">
@@ -131,12 +129,13 @@
                         </ul>
                     </li>
                     <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">Ventas
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Ventas
                             <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
-                        <ul id="collapseTwon" class="collapse list-unstyled pl-3">
-                            <li> <a class="text-decoration-none" href="#">Deportivo</a> </li>
-                            <li> <a class="text-decoration-none" href="#">Casual</a> </li>
+                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Deportivos</a></li>
+                            <li><a class="text-decoration-none" href="#">Casual</a></li>
                         </ul>
                     </li>
                     <li class="pb-3">
@@ -153,188 +152,69 @@
                     </li>
                 </ul>
             </div>
-
-            <div class"col-lg-9">
+    
+            <div class="col-lg-9">
                 <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-inline shop-top-menu pb-3 pt-1">
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Todo</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="">Hombres</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="">mujeres</a>
-                            </li>
-                        </ul>
-                    </div>
+    
                     <div class="col-md-6 pb-4">
                         <div class="d-flex">
-                            <select class="form-control">
-                                <option>Presentar</option>
-                                <option>A a Z</option>
-                                <option>Item</option>
+                            <select id="filtro" class="form-control">
+                                <option value="todas">Todas</option>
+                                <option value="blusas">Blusas</option>
+                                <option value="camisas">Camisas</option>
+                                <option value="pantalones">Pantalones</option>
+                                <option value="accesorios">Accesorios</option>
+                                
                             </select>
                         </div>
                     </div>
                 </div>
-                <script>
-                    //DOM
-                    document.addEventListener('DOMContenloaded',() =>{
-                        //Variables - base de datos
-                        const baseDedatos=[
-                            {
-                                id:1,
-                                nombre:'Blusa Blanca',
-                                precio:90000,
-                                imagen: 'assets/img/Damas/blusa1.jpg'
-                            },
-                            {
-                                id:2,
-                                nombre:'Blusa Verde',
-                                precio:110000,
-                                imagen: 'assets/img/Damas/blusa2.jpg'
-                            },
-                            {
-                                id:3,
-                                nombre:'Buso Blanco&Azul',
-                                precio:100000,
-                                imagen: 'assets/img/Caballero/buso1.jpg'
-                            },
-                            {
-                                id:4,
-                                nombre:'Buso Vinotinto',
-                                precio:130000,
-                                imagen: 'assets/img/Caballero/buso2.jpg'
-                            },
-                            {
-                                id:5,
-                                nombre:'Gorra Negra',
-                                precio:60000,
-                                imagen: 'assets/img/Accesorios/gorra1.jpg'
-                            }
-                        ];
-                        let carrito = [];
-                        const divisa = '$';
-                        const DOMitems = document.querySelector('#items');
-                        const DOMcarrito = document.querySelector('#carrito');
-                        const DOMtotal = document.querySelector('#total');
-                        const DOMbotonVaciar= document.querySelector('#boton-vaciar');
-                    
-
-                    //seccion de funciones
-                    /*
-                    Dibujamos todos los productos a partir de la bd
-                    */
-                    function renderizarProductos(){
-                        baseDedatos.forEach((info) => {
-                            //estructura                            
-                            const miNodo = document.createElement('div');
-                            miNodo.classList.add('card', 'col-sm-4');
-                            //boby
-                            const miNodoCardBody = document.createElement('div');
-                            miNodoCardBody.classList.add('card-body');
-                            //titulo
-                            const miNodoTitle = document.createElement('h6');
-                            miNodoTitle.classList.add('card-title');
-                            miNodoTitle.textContent = info.nombre;
-                            //imagen
-                            const miNodoImagen = document.createElement('img');
-                            miNodoImagen.classList.add('img-fluid');
-                            miNodoImagen.setAttribute('src', info.imagen);
-                            //precio
-                            const miNodoPrecio = document.createElement('p');
-                            miNodoPrecio.classList.add('card-text');
-                            miNodoPRecio.textContent =  `${divisa}${info.precio}`;
-
-                            //boton
-                            const miNodoBoton = document.createElement('button');
-                            miNodoBoton.classList.add('btn', 'btn-primary');
-                            miNodoBoton.textContent = 'Agregar';
-                            miNodoBoton.setAttribute('marcador', info.id);
-                            miNodoBoton.addEventListener('click', anadirProductoAlCarrito);
-                            
-                            //insertamos
-                            miNodoCardBody.appendChild(miNodoImagen);
-                            miNodoCardBody.appendChild(miNodoTitle);
-                            miNodoCardBody.appendChild(miNodoPrecio);
-                            miNodoCardBody.appendChild(miNodoBoton);
-                            miNodo.appendChild(miNodoCardBody);
-                            DOMitems.appendChild(miNodo);                          
-                            
-                        });
-                    }
-                    /*
-                    Evento para añadir un producto al carro de compras
-                    */
-                    function anadirProductoAlCarrito(evento){
-                        //añadimos el nodo a nuestro carrito
-                        carrito.push(evento.target.getAttibute('marcador'))
-                        //actualiizamos el carrito
-                        renderizarCarrito();
-                        handleCarritoValue(carrito.length)
-                    }
-                    function handleCarritoValue(Value) {
-                        const carritoContainer = document.getElementById("carrito-value");
-                    }
-
-                    //dibujar todos los productos guardados en el carrito
-                    function renderizarCarrito(){
-                        //vaciamos todo el html
-                        DOMcarrito.textContent = "";
-                        //quitar duplicados
-                        const carritoDuplicados = [...new set(carrito)];
-                        //generamos los nodos apartir del carrito
-                        carritoDuplicados.forEach((item) => {
-                            //obtenemos el item que necesitamos de la variable base de datos
-                            const miItem = baseDedatos.filter((itemBaseDatos) =>{
-                                return itemBaseDatos.id === parseInt(item);
-                            });
-                        // cuenta el numero de veces que se repite el prodcucto
-                        const numeroUnidadesItem = carrito.reduce((total, itemId) =>{
-                            return itemId === item ? total += 1 : total;
-                        },0);
-                        //creamos el nodo del item del carrito
-                        const miBoton = document.createElement('button');
-                        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-                        miBoton.textContent='X';
-                        miBoton.style.marginLeft = '1rem';
-                        miBoton.dataset.item = item;
-                        miboton.addEventListener('click', borraritemCarrito);
-                        //mezclamos nodos
-                        miNodo.appendChild(miboton);
-                        DOMcarrito.appendChild(miNodo);    
-                        });
-                    }
-                    renderizarProductos();
-                    renderizarCarrito();
-                    
-                });
-                </script>
-        <!--carrito-->
-                        <div class="container">
-                            <div class="row" >
-                                <!--Elementos generados a partir de la bd del carrito-->
-                                <main id="items" class="col-sm-8 row"></main>
-                                <!--carrito-->
-                                <aside class="col-sm-4">                                    
-                                    <h3>Carrito</h3>
-                                    <!--elementos del carrito-->
-                                    <ul id="carrito" class="list-group">
-                                        <hr>
-                                        <!--precio total-->
-                                        <p class="text-right">Total: $ <span id="total"></span></p>
-                                        <button id="boton-vaciar" class="btn-danger">Vaciar</button>
-                                        <button id="" class="btn btn-info">Pagar</button>
-                                    </ul>                                    
-                                </aside>                  
-                            </div>  
-                        </div>
-<!--productos en el carro-->                   
-            </div>           
+                <!-- productos en el carro -->
+                <!-- fin de productos -->
+                <!-- carrito -->
+                <div class="container">
+                    <div class="row">
+                        <!-- Elementos generados a partir del JSON -->
+                        <main id="items" class="col-sm-8 row"></main>
+                        <!-- Carrito -->
+                        <aside class="col-sm-4">
+                            <h3>Carrito</h3>
+                            <!-- Elementos del carrito -->
+                            <ul id="carrito" class="list-group"></ul>
+                            <hr>
+                            <!-- Precio total -->
+                            <p class="text-right">Total: $ <span id="total"></span></p>
+                            <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                            <button class="btn btn-info">
+                            <a href="pago.html" target="target_blank">Pagar</a>
+                            </button>
+                            <button class="btn btn-info">
+                            <a href="https://www.paypal.com/invoice/p/#X9AMTLCL84389TKX" target="target_blank">Pagar</a>
+                            </button>
+            
+                        </aside>
+                    </div>
+                </div>
+    <!-- paginacion -->
+                <div class="row">
+                    <ul class="pagination pagination-lg justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                        </li>
+                    </ul>
+                </div>
+    
+            </div>
         </div>
     </div>
+    <!-- final de contenido -->
+    
     <!--fin de contenido-->
     <!-- inicio de pie -->
     <footer class="bg-dark" id="templatemo_footer">
@@ -403,7 +283,7 @@
             </div>
         </div>
     </div>
-        <div class="w100 bg-black py-3">
+        <div class="text-light text-center mt-4">
             <div class="container">
                 <div class="row pt-2">
                     <p class="text-left text-light">Copyright &copy; 2024 - urbanfashion | Diseñado por: Leonel Manjarres & Luz Mejia</p>
@@ -417,6 +297,9 @@
     <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
-    <script src="assets/js/custom.js"></script>    
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/carrito.js"></script>
+    <script src="assets/js/contadorvisita.js"></script> 
+    
 </body>
 </html>
