@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/templatemo.css"/>
     <link rel="stylesheet" href="assets/css/custom.css"/>
     <link rel="stylesheet" href="assets/css/fontawesome.min.css"/>
+    
 </head>
 <body>
 
@@ -65,106 +66,113 @@
     <!-- Fin menú de navegación -->
 
     <!-- Cuerpo -->
-    <section class="bg-light">
-        <div class="container pb-5">
-            <div class="row">
-                <div class="col-lg-5 mt-5">
-                    <div class="card mb-3">
-                        <img class="card-img img-fluid" src="assets/img/Caballero/Buso1.jpg" alt="Imagen producto">
+    <!-- Contenedor de Producto -->
+<section class="bg-light">
+    <div class="container pb-5">
+        <div class="row">
+            <!-- Imagen Principal -->
+            <div class="col-lg-5 mt-5">
+                <div class="card mb-3">
+                    <img class="card-img img-fluid" src="assets/img/logo.png" alt="Imagen producto" id="main-product-img">
+                </div>
+                <div class="row">
+                    <!-- Carrusel de Miniaturas -->
+                    <div class="col-1 align-self-center">
+                        <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                            <i class="text-dark fas fa-chevron-left"></i>
+                            <span class="sr-only">Anterior</span>
+                        </a>
                     </div>
-                    <div class="row">
-                        <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="prev">
-                                <i class="text-dark fas fa-chevron-left"></i>
-                                <span class="sr-only">Anterior</span>
-                            </a>
-                        </div>
-                        <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
-                            <div class="carousel-inner product-links-wap" role="listbox">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#"><img class="card-img img-fluid" src="assets/img/Caballero/Buso2.jpg" alt="Camisa"></a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#"><img class="card-img img-fluid" src="assets/img/Damas/blusa1.jpg" alt="Jeans"></a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#"><img class="card-img img-fluid" src="assets/img/Damas/blusa2.jpg" alt="Accesorios"></a>
-                                        </div>
+                    <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
+                        <div class="carousel-inner product-links-wap" role="listbox">
+                            <!-- Imágenes del Producto -->
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="#"><img class="card-img img-fluid" src="assets/img/Caballero/Buso2.jpg" alt="Buso Vinotinto" data-desc="Descripción del producto 1" data-price=" Cop 130.000" data-stock="10"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="#"><img class="card-img img-fluid" src="assets/img/Damas/blusa1.jpg" alt="Blusa Blanca" data-desc="Descripción del producto 2" data-price=" Cop 90.000" data-stock="15"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="#"><img class="card-img img-fluid" src="assets/img/Accesorios/gorra2.jpg" alt="Gorra Azul" data-desc="Descripción del producto 3" data-price=" Cop 50.000" data-stock="8"></a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="#"><img class="card-img img-fluid" src="assets/img/Accesorios/pulsera1.jpg" alt="Pulsera Dama" data-desc="Descripción del producto 3" data-price=" Cop 35.000" data-stock="8"></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="next">
-                                <i class="text-dark fas fa-chevron-right"></i>
-                                <span class="sr-only">Siguiente</span>
-                            </a>
-                        </div>
+                    </div>
+                    <div class="col-1 align-self-center">
+                        <a href="#multi-item-example" role="button" data-bs-slide="next">
+                            <i class="text-dark fas fa-chevron-right"></i>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-7 mt-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1 class="h2">Camisas de todas las marcas...</h1>
-                            <p class="h3 py-2">#</p>
-                            <p class="py-2">
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-secondary"></i>
-                                <span class="list-inline-item text-dark">Rating 4.8 | 40 Comentarios</span>
-                            </p>
+            <!-- Detalles del Producto -->
+            <div class="col-lg-7 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="h2" id="product-name">Elice, compra y disfruta con Urban Fashion...</h1>
+                        <p class="h3 py-2" id="product-price"></p> <!-- Aquí será el precio dinámico -->
+                        <p class="py-2" id="product-description">Descripción del producto...</p> <!-- Descripción dinámica -->
+                        <p class="py-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-secondary"></i>
+                            <span class="list-inline-item text-dark">Rating 4.8 | 40 Comentarios</span>
+                        </p>
 
-                            <h6>Descripción:</h6>
-                            <p>#</p>
+                        <h6>Especificación:</h6>
+                        <ul class="list-unstyled pb-3">
+                            <li>Todas las marcas</li>
+                        </ul>
 
-                            <h6>Especificación:</h6>
-                            <ul class="list-unstyled pb-3">
-                                <li>Todas las marcas</li>
-                            </ul>
-
-                            <form action="" method="GET">
-                                <input type="hidden" name="product-title" value="Activewear">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <ul class="list-inline pb-3">
-                                            <li class="list-inline-item">Tallas :
-                                                <input type="hidden" name="product-size" id="product-size" value="S">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-auto">
-                                        <ul class="list-inline pb-3">
-                                            <li class="list-inline-item text-right">
-                                                Cantidad
-                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
-                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
-                                        </ul>
-                                    </div>
+                        <form action="" method="GET">
+                            <input type="hidden" name="product-title" value="Activewear">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <ul class="list-inline pb-3">
+                                        <li class="list-inline-item">Tallas :
+                                            <input type="hidden" name="product-size" id="product-size" value="S">
+                                        </li>
+                                        <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
+                                        <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
+                                        <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
+                                    </ul>
                                 </div>
-                                <div class="row pb-3">
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Comprar</button>
-                                    </div>
+                                <div class="col-auto">
+                                    <ul class="list-inline pb-3">
+                                        <li class="list-inline-item text-right">
+                                            Cantidad
+                                            <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                        </li>
+                                        <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                        <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                        <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                    </ul>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col d-grid">
+                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Comprar</button>
+                                </div>
+                            </div>
+                        </form>
 
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <!-- Fin cuerpo -->
 
     <!-- Pie de página -->
@@ -242,54 +250,8 @@
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/produd.destacados.js"></script>
 
-    <script>
-        // Seleccionar todas las imágenes en miniatura
-        const thumbnailImages = document.querySelectorAll('.carousel-inner .col-4 img');
-    
-        // Referencia a la imagen principal
-        const mainImage = document.querySelector('.card-img.img-fluid');
-    
-        // Variable para rastrear la imagen seleccionada
-        let selectedThumbnail = null;
-    
-        // Añadir un evento de clic a cada imagen en miniatura
-        thumbnailImages.forEach(image => {
-            image.addEventListener('click', () => {
-                // Si hay una imagen previamente seleccionada, eliminamos el estilo de selección
-                if (selectedThumbnail) {
-                    selectedThumbnail.classList.remove('selected-thumbnail');
-                }
-    
-                // Agregamos una clase para marcar la imagen seleccionada
-                image.classList.add('selected-thumbnail');
-                selectedThumbnail = image;
-    
-                // Animar la transición de la imagen principal
-                mainImage.classList.add('fade-out');
-                setTimeout(() => {
-                    mainImage.src = image.src; // Cambiar la imagen principal al hacer clic
-                    mainImage.classList.remove('fade-out');
-                }, 300); // Duración en milisegundos para la transición
-            });
-        });
-    
-        // Añadir estilos para el efecto de selección y transición
-        const styles = document.createElement('style');
-        styles.innerHTML = `
-            .selected-thumbnail {
-                border: 2px solid #28a745;
-                transform: scale(1.05);
-                transition: transform 0.3s, border 0.3s;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            }
-            .fade-out {
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
-            }
-        `;
-        document.head.appendChild(styles);
-    </script>
-    
+
 </body>
 </html>
