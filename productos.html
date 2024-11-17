@@ -243,5 +243,53 @@
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
 
+    <script>
+        // Seleccionar todas las imágenes en miniatura
+        const thumbnailImages = document.querySelectorAll('.carousel-inner .col-4 img');
+    
+        // Referencia a la imagen principal
+        const mainImage = document.querySelector('.card-img.img-fluid');
+    
+        // Variable para rastrear la imagen seleccionada
+        let selectedThumbnail = null;
+    
+        // Añadir un evento de clic a cada imagen en miniatura
+        thumbnailImages.forEach(image => {
+            image.addEventListener('click', () => {
+                // Si hay una imagen previamente seleccionada, eliminamos el estilo de selección
+                if (selectedThumbnail) {
+                    selectedThumbnail.classList.remove('selected-thumbnail');
+                }
+    
+                // Agregamos una clase para marcar la imagen seleccionada
+                image.classList.add('selected-thumbnail');
+                selectedThumbnail = image;
+    
+                // Animar la transición de la imagen principal
+                mainImage.classList.add('fade-out');
+                setTimeout(() => {
+                    mainImage.src = image.src; // Cambiar la imagen principal al hacer clic
+                    mainImage.classList.remove('fade-out');
+                }, 300); // Duración en milisegundos para la transición
+            });
+        });
+    
+        // Añadir estilos para el efecto de selección y transición
+        const styles = document.createElement('style');
+        styles.innerHTML = `
+            .selected-thumbnail {
+                border: 2px solid #28a745;
+                transform: scale(1.05);
+                transition: transform 0.3s, border 0.3s;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+            .fade-out {
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+        `;
+        document.head.appendChild(styles);
+    </script>
+    
 </body>
 </html>
