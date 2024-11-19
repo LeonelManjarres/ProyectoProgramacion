@@ -44,7 +44,7 @@
     box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
 }
 
-.btn-primary {
+.btn-success {
     display: block;
     width: 100%;
     padding: 12px;
@@ -59,12 +59,12 @@
     font-weight: 600;
 }
 
-.btn-primary:hover {
+.btn-success:hover {
     background: linear-gradient(135deg, #0056b3, #003f7f);
     transform: translateY(-2px);
 }
 
-.btn-primary:active {
+.btn-success:active {
     transform: translateY(0);
 }
 
